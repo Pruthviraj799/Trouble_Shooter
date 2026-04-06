@@ -61,6 +61,7 @@ def main():
     cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
 
     phone_start_time = None
+    alert_triggered = False
 
     try:
         while True:
@@ -104,10 +105,13 @@ def main():
                 )
                 
                 if elapsed_time >= 10:
-                    print("🚨 DISTRACTION DETECTED: Put your phone away! 🚨")
+                    if not alert_triggered:
+                        print("🚨 DISTRACTION DETECTED: Put your phone away! 🚨")
+                        alert_triggered = True
                     draw_alert(annotated)
             else:
                 phone_start_time = None
+                alert_triggered = False
 
             cv2.imshow(window_name, annotated)
 
