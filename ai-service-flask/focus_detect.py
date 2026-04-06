@@ -12,6 +12,7 @@ Controls:
 """
 
 import cv2
+import time
 from ultralytics import YOLO
 
 # ──────────────────────────────────────────────
@@ -59,6 +60,8 @@ def main():
     window_name = "Focus Monitor – ESC to quit"
     cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
 
+    phone_start_time = None
+
     try:
         while True:
             ret, frame = cap.read()
@@ -87,8 +90,24 @@ def main():
 
             # ── Distraction alert ─────────────────────────────────
             if phone_detected:
-                print("🚨 DISTRACTION DETECTED: Put your phone away! 🚨")
-                draw_alert(annotated)
+                if phone_start_time is None:
+                    phone_start_time = time.time()
+                
+                elapsed_time = time.time() - phone_start_time
+                
+                cv2.putText(
+                    annotated, f"Warning: Phone detected for {int(elapsed_time)}s",
+                    (12, 100),
+                    cv2.FONT_HERSHEY_DUPLEX, 0.8,
+                    (0, 255, 255), 2,
+                    cv2.LINE_AA,
+                )
+                
+                if elapsed_time >= 10:
+                    print("🚨 DISTRACTION DETECTED: Put your phone away! 🚨")
+                    draw_alert(annotated)
+            else:
+                phone_start_time = None
 
             cv2.imshow(window_name, annotated)
 
