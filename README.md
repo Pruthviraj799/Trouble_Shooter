@@ -1,31 +1,47 @@
-# FocusRoom Project Documentation
+# Trouble Shooter
 
 ## Overview
-The FocusRoom project is designed to help users create a distraction-free environment for enhanced productivity and concentration. This documentation provides comprehensive details about the project including setup instructions, execution commands, and contributor information.
+Trouble Shooter is a user-friendly tool designed to help users diagnose and resolve common technical issues. Whether you're dealing with software bugs, network problems, or hardware malfunctions, Trouble Shooter provides step-by-step guidance to assist you.
 
-## Setup Instructions
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Pruthviraj799/Trouble_Shooter.git
-   cd Trouble_Shooter
-   ```
-2. **Install Dependencies**:
-   Ensure you have the necessary dependencies installed. Refer to the `requirements.txt` file for specific packages.
+## Features
+- **Comprehensive Guides:** Detailed instructions for troubleshooting various issues.
+- **User-friendly Interface:** Easy-to-navigate interface to help users find solutions quickly.
+- **Community Support:** Access to a community forum for sharing tips and experiences.
 
-## Execution Commands
-To run the FocusRoom application, use the following commands:
+## Installation
+To get started with Trouble Shooter, clone the repository and install the necessary dependencies:
 
-- **Start FocusRoom**:  To start the application, you can run:
-  - Windows: `start_focus_room.bat`
-  - Linux: `./start_focus_room.sh`
+```bash
+git clone https://github.com/Pruthviraj799/Trouble_Shooter.git
+cd Trouble_Shooter
+```
 
-- **Kill All Processes**: If you need to stop the running application, execute:
-  - Windows: `kill_all.bat`
-  - Linux: `./kill_all.sh`
+Install the required packages using:
 
-## Contributor Details
-- **Pruthviraj799** - Project Lead and Developer
-- **Pratyushhh-sys** - Contributor
+```bash
+npm install
+```
 
-## Additional Information
-For more information on usage and features, please refer to the code comments and other markdown files in the repository. If you encounter any issues, feel free to raise an issue in the GitHub repository.
+## Usage
+To run Trouble Shooter, execute the following command:
+
+```bash
+npm start
+```
+
+Follow the on-screen instructions to resolve your technical issues.
+
+## Contributing
+We welcome contributions! To contribute to Trouble Shooter, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes.
+4. Push to your branch.
+5. Open a pull request.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+- Special thanks to all contributors and the community for their support.
